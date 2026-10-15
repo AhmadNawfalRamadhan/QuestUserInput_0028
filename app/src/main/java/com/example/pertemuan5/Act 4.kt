@@ -1,6 +1,5 @@
 package com.example.pertemuan5
 
-import android.R
 import android.R.attr.onClick
 import android.R.attr.text
 import androidx.compose.foundation.layout.Arrangement

@@ -1,14 +1,17 @@
 package com.example.pertemuan5
 
 import android.R
+import android.R.attr.onClick
 import android.R.attr.text
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.selection.selectable
+import androidx.compose.material3.Button
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
@@ -23,6 +26,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.dimensionResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 
 
@@ -86,5 +90,18 @@ fun FormDataDiri(modifier: Modifier){
             thickness = dimensionResource(R.dimen.divider_tipis),
             color = Color.DarkGray
         )
+        Button(
+            modifier = Modifier.fillMaxWidth(1f),
+            // the button is enable when the user makes a selection
+            enabled = textAlamat.isNotEmpty(),
+            onClick = {
+                nama=textNama
+                jenis=textJK
+                alamat=textAlamat
+            }
+        ){
+            Text(stringResource(R.string.submit))
+        }
+
     }
 }

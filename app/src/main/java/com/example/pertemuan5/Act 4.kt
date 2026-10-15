@@ -1,11 +1,13 @@
 package com.example.pertemuan5
 
 import android.R
+import android.R.attr.text
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.selection.selectable
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
@@ -61,5 +63,14 @@ fun FormDataDiri(modifier: Modifier){
                 }
             }
         }
+        OutlinedTextField(
+            value = textAlamat,
+            singleLine = true,
+            modifier = Modifier.width(250.dp),
+            label = {Text("Alamat")},
+            onValueChange = {
+                textAlamat = it
+            }
+        )
     }
 }
